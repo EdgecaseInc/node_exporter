@@ -12,4 +12,3 @@ deploy:
         key_id: $API_S3_ACCESS_KEY
         key_secret: $API_S3_SECRET_ACCESS_KEY
         bucket_url: s3://$API_S3_BUCKET/node_exporter/
-        source_dir: node_exporter/
