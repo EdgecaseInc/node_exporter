@@ -7,7 +7,7 @@ deploy:
     - script:
         name: Make node_exporter
         code: |-
-        cd .node_exporter
+        cd node_exporter/
         make
         stat node_exporter
     - s3sync:
