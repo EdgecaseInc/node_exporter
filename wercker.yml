@@ -1,0 +1,17 @@
+box: golang
+build:
+  steps:
+
+deploy:
+  steps:
+    - script:
+        name: Make node_exporter
+        code: |-
+        cd .node_exporter
+        make
+        stat node_exporter
+    - s3sync:
+        key_id: $API_S3_ACCESS_KEY
+        key_secret: $API_S3_SECRET_ACCESS_KEY
+        bucket_url: s3://$API_S3_BUCKET/node_exporter/
+        source_dir: node_exporter/
