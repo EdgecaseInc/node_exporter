@@ -1,4 +1,7 @@
 box: wercker/golang
+build:
+  steps:
+    - bundle-install
 deploy:
   steps:
     - script:
