@@ -8,6 +8,10 @@ deploy:
         name: Make node_exporter
         code: |-
           make
+    - script:
+        name: Remove all except node_exporter
+        code: |-
+          find . -type f -not -name 'node_exporter' | xargs rm
     - s3sync:
         key_id: $API_S3_ACCESS_KEY
         key_secret: $API_S3_SECRET_ACCESS_KEY
